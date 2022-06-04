@@ -26,30 +26,30 @@ http.onload = function(){
             <p class="stock">
             Available stock : ${item.stock}
             </p>
-            <p class="rating">User Ratting: ${item.rating}
+            <p class="rating">User Rating: ${item.rating}>
             </p>
             </div>
             `;
         }
+        document.querySelector(".products").innerHTML=output;
 
 const searchInput=document.querySelector(".search-field")
 searchInput.addEventListener("input",e=>{
     const value=e.target.value.toLowerCase()
-for(let i=0;i<30;i++)
+for(let i=1;i<31;i++)
 {
-    var element =document.getElementById(i+1)
-   if(!products[i].title.toLowerCase().includes(value) && !products[i].description.toLowerCase().includes(value))
+    var element =document.getElementById(i)
+   if(!products[i-1].title.toLowerCase().includes(value) && !products[i-1].description.toLowerCase().includes(value))
    {
-        element.setAttribute("style","display : none")
+        element.style.display="none"
+   }else
+   {
+    element.style.display=""
    }
 }
-for(let i=0;i<30;i++)
-{
-    var element =document.getElementById(i+1)
-  element.setAttribute("style","display : block")
-}
-})
-     document.querySelector(".products").innerHTML=output;
-}
+ 
 
+}
+)
+    }
 }
